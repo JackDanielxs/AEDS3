@@ -1,4 +1,4 @@
-# Relatório - Trabalho Prático 01
+# Relatório - TP01
 
 ## Participantes
 - Daniel Matos Marques
