@@ -25,9 +25,9 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
 
 ## Classes
 - `Usuario` e `ListaPresente` (Classes modelo) - Ambas extendem a classe `Registro`, usada como base das entidades.
-- `ArvoreBMais` - Implementa o relacionamento **1:N** entre usuários e listas
-- `HashExtensivel` - Implementa índices (diretos e indiretos)
-- `NanoID` - Responsável pelos códigos para compartilhar listas entre usuários
+- `ArvoreBMais` - Implementa o relacionamento **1:N** entre usuários e listas.
+- `HashExtensivel` - Implementa índices (diretos e indiretos).
+- `NanoID` - Responsável pelos códigos para compartilhar listas entre usuários.
 
 ---
 
