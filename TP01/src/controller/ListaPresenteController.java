@@ -18,16 +18,16 @@ public class ListaPresenteController {
         } catch (final Exception e) { e.printStackTrace(); }
     }
 
-    public List<ListaPresente> getListasByIdUsuario(final int idUsuario) {
-        try {
-            return this.ops.getAllByIdUsuario(idUsuario);
-        } catch (final Exception e) { return List.of(); }
-    }
-
     public ListaPresente getById(final int id) {
         try {
             return this.ops.read(id);
         } catch (final Exception e) { return null; }
+    }
+
+    public List<ListaPresente> getListasByIdUsuario(final int idUsuario) {
+        try {
+            return this.ops.getAllByIdUsuario(idUsuario);
+        } catch (final Exception e) { return List.of(); }
     }
 
     public ListaPresente getByCodigo(final String cod) {
@@ -72,10 +72,6 @@ public class ListaPresenteController {
         } catch (Exception e) { return false; }
     }
 
-    public boolean inativar(final int id){
-        return this.editarStatus(id, false);
-    }
-
     public boolean editarStatusPorUsuario(final boolean status) {
         try {
             List<ListaPresente> lista = this.getListasByIdUsuario(Memoria.getIdUsuario());
@@ -89,5 +85,9 @@ public class ListaPresenteController {
                 }
             });
         } catch (final Exception e) { return false; }
+    }
+
+    public boolean inativar(final int id){
+        return this.editarStatus(id, false);
     }
 }

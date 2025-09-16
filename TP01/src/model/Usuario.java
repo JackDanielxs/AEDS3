@@ -5,7 +5,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import util.MD5;
+import util.Encryption;
 import util.CampoObrigatorio;
 
 public class Usuario extends Registro{
@@ -43,6 +43,14 @@ public class Usuario extends Registro{
     public String getResposta() { return this.resposta; }
     public void setResposta(final String resposta) { this.resposta = resposta; }
 
+    public static Usuario create(
+        final String nome,
+        final String email,
+        final String senha,
+        final String pergunta,
+        final String resposta
+    ) { return new Usuario(-1, nome, email, Encryption.toMd5(senha), pergunta, resposta, true); }
+
     public static Usuario from(
         final int id,
         final String nome,
@@ -52,14 +60,6 @@ public class Usuario extends Registro{
         final String resposta,
         final boolean status
     ) { return new Usuario(id, nome, email, hashSenha, pergunta, resposta, status); }
-
-    public static Usuario create(
-        final String nome,
-        final String email,
-        final String senha,
-        final String pergunta,
-        final String resposta
-    ) { return new Usuario(-1, nome, email, MD5.toMd5(senha), pergunta, resposta, true); }
 
     @Override
     public void fromByteArray(final byte[] array) throws IOException {

@@ -35,7 +35,7 @@ public class DetalhesLista extends View {
                 Status: %s
                 Código: %s
 
-                (1) ditar lista (Produtos) - **AINDA NÃO IMPLEMENTADO**
+                (1) Editar lista (Produtos) - **AINDA NÃO IMPLEMENTADO**
                 (2) Editar lista (Dados)
                 (3) Desativar lista
                 

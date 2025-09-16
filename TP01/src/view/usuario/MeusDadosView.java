@@ -9,7 +9,7 @@ public class MeusDadosView extends View {
     public static final MeusDadosView INSTANCE = new MeusDadosView();
 
     private MeusDadosView() {
-        super("Meus dados", true);
+        super("Dados pessoais", true);
     }
 
     @Override

@@ -56,10 +56,17 @@ public class ListaPresente extends Registro {
         : "";
         return this.dtExpiracao
                 .map(v-> prefix + v.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
-                .orElse(prefix + "Não cadastrada");
+                .orElse(prefix + "Sem data de expiração");
     }
 
     public String getCodigo() { return this.codigo; }
+
+    public static ListaPresente create(
+            final String nome,
+            final String descricao,
+            final Optional<LocalDate> dtExpiracao,
+            final int idUsuario
+    ) { return new ListaPresente(-1, nome, descricao, LocalDate.now(), dtExpiracao, NanoID.nanoid(), idUsuario, true); }
 
     public static ListaPresente from(
         final String nome,
@@ -72,12 +79,7 @@ public class ListaPresente extends Registro {
         final boolean status
     ) { return new ListaPresente(id, nome, descricao, dtCriacao, dtExpiracao, codigo, idUsuario, status); }
 
-    public static ListaPresente create(
-        final String nome,
-        final String descricao,
-        final Optional<LocalDate> dtExpiracao,
-        final int idUsuario
-    ) { return new ListaPresente(-1, nome, descricao, LocalDate.now(), dtExpiracao, NanoID.nanoid(), idUsuario, true); }
+    
 
     @Override
     public void fromByteArray(byte[] array) throws IOException {

@@ -18,7 +18,7 @@ public class MinhasListasView extends View {
     public void viewDisplay() {
         List<ListaPresente> list = ListaPresenteController.INSTANCE.getListasByIdUsuario(Memoria.getIdUsuario());
 
-        StringBuilder menuBuilder = new StringBuilder("MINHAS LISTAS\n");
+        StringBuilder menuBuilder = new StringBuilder("");
 
         if (list.isEmpty()) {
             menuBuilder.append("Nenhuma lista encontrada.\n");

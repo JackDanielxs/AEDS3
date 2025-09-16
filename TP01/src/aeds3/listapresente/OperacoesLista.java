@@ -12,21 +12,6 @@ public class OperacoesLista extends Arquivo<ListaPresente>  {
     private ArvoreBMais<ParIdId> idxIndiretoUsuario;
     private HashExtensivel<ParIdCodigo> idxIndireto;
 
-    public OperacoesLista() throws Exception {
-        super(ListaPresente.class);
-        this.idxIndiretoUsuario = new ArvoreBMais<ParIdId>(
-            ParIdId.class.getConstructor(), 
-            5, 
-            "listapresente/idUsuario.idLista"
-        );
-        this.idxIndireto = new HashExtensivel<ParIdCodigo>(
-            ParIdCodigo.class.getConstructor(), 
-            5,
-            "listapresente/id.codigo",
-            "listapresente/id.codigo"
-        );
-    }
-
     public int create(final ListaPresente list) throws Exception{
         int id = super.create(list);
         this.idxIndireto.create(ParIdCodigo.create(list.getId(), list.getCodigo()));
@@ -59,5 +44,20 @@ public class OperacoesLista extends Arquivo<ListaPresente>  {
         } catch (final Exception e) { System.out.println(e.getMessage()); }
 
         return lista;
+    }
+
+    public OperacoesLista() throws Exception {
+        super(ListaPresente.class);
+        this.idxIndiretoUsuario = new ArvoreBMais<ParIdId>(
+            ParIdId.class.getConstructor(), 
+            5, 
+            "listapresente/idUsuario.idLista"
+        );
+        this.idxIndireto = new HashExtensivel<ParIdCodigo>(
+            ParIdCodigo.class.getConstructor(), 
+            5,
+            "listapresente/id.codigo",
+            "listapresente/id.codigo"
+        );
     }
 }

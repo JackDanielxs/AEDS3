@@ -5,7 +5,7 @@ import java.util.List;
 import aeds3.Memoria;
 import aeds3.usuario.OperacoesUsuario;
 import model.Usuario;
-import util.MD5;
+import util.Encryption;
 import util.CampoObrigatorio;
 
 public class UsuarioController {
@@ -24,21 +24,11 @@ public class UsuarioController {
         } catch (final Exception e) { return null; }
     }
 
-    public boolean login(final String email, final String senha){
-        try{        
-            Usuario user = this.ops.getByEmail(email);
-            if(user == null) return false;
-            if(!user.getHashSenha().equals(MD5.toMd5(senha))) return false;
-            Memoria.setIdUsuario(user.getId());
-            return user.getStatus();
-        }catch(final Exception e){ return false; }
-    }
-
     public List<String> getPergunta(final String email, final String senha){
         try{        
             Usuario user = this.ops.getByEmail(email);
             if(user == null) return List.of();
-            if(!user.getHashSenha().equals(MD5.toMd5(senha))) return List.of();
+            if(!user.getHashSenha().equals(Encryption.toMd5(senha))) return List.of();
             Memoria.setIdUsuario(user.getId());
             return List.of(user.getPergunta(), user.getResposta());
         }catch(final Exception e){
@@ -47,9 +37,14 @@ public class UsuarioController {
         return List.of();
     }
 
-    public boolean logout(){
-        Memoria.logout();
-        return Memoria.isLogout();
+    public boolean login(final String email, final String senha){
+        try{        
+            Usuario user = this.ops.getByEmail(email);
+            if(user == null) return false;
+            if(!user.getHashSenha().equals(Encryption.toMd5(senha))) return false;
+            Memoria.setIdUsuario(user.getId());
+            return user.getStatus();
+        }catch(final Exception e){ return false; }
     }
 
     public int create(
@@ -87,7 +82,7 @@ public class UsuarioController {
                     antigo.getId(), 
                     nome, 
                     email, 
-                    novaSenha ? MD5.toMd5(senha.trim()) : antigo.getHashSenha(),
+                    novaSenha ? Encryption.toMd5(senha.trim()) : antigo.getHashSenha(),
                     pergunta, 
                     resposta,
                     true
@@ -116,5 +111,10 @@ public class UsuarioController {
             ListaPresenteController.INSTANCE.editarStatusPorUsuario(false);
             return ops.update(user);
         } catch (final Exception e) { return false; }
+    }
+
+    public boolean logout(){
+        Memoria.logout();
+        return Memoria.isLogout();
     }
 }
