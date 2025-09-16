@@ -10,10 +10,25 @@
 Para compartilhar, o sistema gera um código NanoID, que permite que outras pessoas visualizem as listas sem expor informações sensíveis, garantindo praticidade e segurança.
 
 ## O sistema
-upload telas
+
+![Home](./assets/Home.png)  
+
+![Inicio](./assets/Inicio.png)  
+
+![DadosPessoais](./assets/DadosPessoais.png)  
+
+![MinhasListas](./assets/MinhasListas.png)  
+
+![DetalhesLista](./assets/DetalhesLista.png)  
+
+![BuscarLista](./assets/BuscarLista.png)  
 
 ## Classes
--
+- `Usuario` e `ListaPresente` (Classes modelo) - Ambas extendem a classe `Registro`, usada como base das entidades.
+- `ArvoreBMais` - Implementa o relacionamento **1:N** entre usuários e listas
+- `HashExtensivel` - Implementa índices (diretos e indiretos)
+- `NanoID` - Responsável pelos códigos para compartilhar listas entre usuários
+
 
 ## Operações implementadas
 -
