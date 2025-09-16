@@ -29,10 +29,6 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
 - `HashExtensivel` - Implementa índices (diretos e indiretos)
 - `NanoID` - Responsável pelos códigos para compartilhar listas entre usuários
 
-
-## Operações implementadas
--
-
 ---
 
 - Há um CRUD de usuários (que estende a classe ArquivoIndexado, acrescentando Tabelas Hash Extensíveis e Árvores B+ como índices diretos e indiretos conforme necessidade) que funciona corretamente?
