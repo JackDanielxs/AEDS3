@@ -14,7 +14,11 @@ public class BuscarListaView extends View {
 
     @Override
     public void viewDisplay() {
-        System.out.println("Insira o código para buscar: (R p/ voltar)");
+        String helper = """
+                Busque uma lista de presente pelo código único dela.
+                Insira 'R' para voltar.
+                Opção: """;
+        System.out.println(helper);
         String cod = sc.nextLine().trim();
 
         if(CampoObrigatorio.isNotValid(cod) || (!cod.equals("R") && cod.length() < 10)){
