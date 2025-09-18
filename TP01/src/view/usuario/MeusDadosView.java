@@ -23,7 +23,6 @@ public class MeusDadosView extends View {
                 """
                 Nome: %s
                 Email: %s
-                Pergunta secreta: %s
 
                 (1) Editar dados
                 (2) Inativar usuário
@@ -32,8 +31,7 @@ public class MeusDadosView extends View {
 
                 Opção: """,
                     user.getNome(),
-                    user.getEmail(),
-                    user.getPergunta()
+                    user.getEmail()
             );
 
             option = sc.nextLine().trim().toUpperCase();

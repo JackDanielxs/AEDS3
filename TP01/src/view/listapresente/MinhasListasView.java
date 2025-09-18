@@ -26,10 +26,9 @@ public class MinhasListasView extends View {
             for (int i = 0; i < list.size(); i++) {
                 ListaPresente giftList = list.get(i);
                 menuBuilder.append(
-                    String.format("(%d) %s %s %s\n", i + 1, 
+                    String.format("(%d) %s %s\n", i + 1, 
                         giftList.getNome(),
-                        giftList.getDtExpiracaoFormatada("-"),
-                        giftList.getStatus() ? "" : "(Desativado)"
+                        giftList.getStatus() ? "" : "(Desativada)"
                     )
                 );
             }
@@ -42,7 +41,7 @@ public class MinhasListasView extends View {
                 """
                 %s
 
-                (N) Nova lista
+                (N) Criar lista
                 (R) Voltar
 
                 Opção: """, menuBuilder.toString()

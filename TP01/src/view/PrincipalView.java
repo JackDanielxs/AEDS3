@@ -22,7 +22,7 @@ public class PrincipalView extends View {
                 (3) Produtos - **AINDA NÃO IMPLEMENTADO**
                 (4) Buscar lista
 
-                (S) Sair
+                (S) Logout
 
                 Opção: """;
             System.out.print(menu);
