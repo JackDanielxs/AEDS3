@@ -11,17 +11,17 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
 
 ## O sistema
 
-![Home](./assets/Home.png)  
+![Home](./assets/Home.png)
 
-![Inicio](./assets/Inicio.png)  
+![Inicio](./assets/Inicio.png)
 
-![DadosPessoais](./assets/DadosPessoais.png)  
+![DadosPessoais](./assets/DadosPessoais.png)
 
-![MinhasListas](./assets/MinhasListas.png)  
+![MinhasListas](./assets/MinhasListas.png)
 
-![DetalhesLista](./assets/DetalhesLista.png)  
+![DetalhesLista](./assets/DetalhesLista.png)
 
-![BuscarLista](./assets/BuscarLista.png)  
+![BuscarLista](./assets/BuscarLista.png)
 
 ## Classes
 - `Usuario` e `ListaPresente` (Classes modelo) - Ambas extendem a classe `Registro`, usada como base das entidades.
