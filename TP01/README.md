@@ -50,4 +50,4 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
 
 ---
 
-> Video do funcionamento do TP01 - [colocar link aqui]
+> Video do funcionamento do TP01 - https://www.youtube.com/watch?v=CtUJ1zPpQuc
