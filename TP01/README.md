@@ -47,3 +47,7 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
  **R: Sim.**
 - O trabalho é original e não a cópia de um trabalho de outro grupo?
  **R: Sim.**
+
+---
+
+> Video do funcionamento do TP01 - [colocar link aqui]
