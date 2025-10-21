@@ -36,7 +36,7 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
 - Há um CRUD da entidade de associação ListaProduto (que estende a classe ArquivoIndexado, acrescentando Tabelas Hash Extensíveis e Árvores B+ como índices diretos e indiretos conforme necessidade) que funciona corretamente?
  **R: Sim, o CRUD da entidade de associação Lista <-> Produto funciona corretamente com índices Hash Extensíveis e B+.**
 - A visão de produtos está corretamente implementada e permite consultas as listas em que o produto aparece (apenas quantidade no caso de lista de outras pessoas)?
- **R: Sim, o sistema permite consultar as listas em que aparece e a quantidade de listas caso elas sejam privadas.**
+ **R: Sim, o sistema permite consultar as listas em que o produto aparece e a quantidade de listas caso elas sejam privadas.**
 - A visão de listas funciona corretamente e permite a gestão dos produtos na lista?
  **R: Sim.**
 - A integridade do relacionamento entre listas e produtos está mantida em todas as operações?
