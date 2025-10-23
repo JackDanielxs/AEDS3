@@ -1,0 +1,115 @@
+package view.produtolista;
+
+import controller.ProdutoController;
+import controller.ProdutoListaPresenteController;
+import model.Produto;
+import model.ProdutoListaPresente;
+import util.IsNumber;
+import view.View;
+
+public final class DetalhesProdutoLista extends View {
+    private int productGiftListId = -1;
+    private Produto product;
+    private ProdutoListaPresente productGiftList;
+    public static final DetalhesProdutoLista INSTANCE = new DetalhesProdutoLista();
+
+    private DetalhesProdutoLista() {
+        super("Detalhes do produto", true);
+    }
+
+    public DetalhesProdutoLista set(final int productGiftListId) {
+        this.productGiftList = ProdutoListaPresenteController.INSTANCE.getById(productGiftListId);
+        this.productGiftListId = productGiftListId;
+
+        this.product = ProdutoController.INSTANCE.getById(productGiftList.getId());
+
+        this.viewName = product.getNome();
+
+        return this;
+    }
+
+    @Override
+    protected void viewDisplay() {
+        String option;
+
+        do {
+            this.set(productGiftListId);
+            this.reload();
+
+            System.out.printf("""
+                    NOME: %s
+                    GTIN-13: %s
+                    DESCRIÇÃO: %s
+                    QUANTIDADE: %d
+                    OBSERVAÇÕES: %s
+
+                    (1) Alterar a quantidade
+                    (2) Alterar as observações
+                    (3) Remover o produto desta lista
+
+                    (R) Retornar ao menu anterior
+
+                    Opção: """,
+                    product.getGtin(),
+                    product.getNome(),
+                    product.getDescricao(),
+                    productGiftList.getQuantidade(),
+                    productGiftList.getDescricao()
+            );
+
+            option = scanner.nextLine().trim().toUpperCase();
+
+            switch (option) {
+                case "1":
+                    changeQuantity();
+                    break;
+                case "2":
+                    editObservation();
+                    break;
+                case "3":
+                    remove();
+                    break;
+                case "R":
+                    this.back();
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    break;
+            }
+
+            System.out.println();
+
+        } while (!option.equals("R"));
+    }
+
+    private void editObservation() {
+        System.out.println("Digite a nova obs: ");
+        String newOBS = scanner.nextLine().trim();
+        productGiftList.setDescricao(newOBS);
+        ProdutoListaPresenteController.INSTANCE.update(productGiftList);
+    }
+
+    private void remove() {
+        boolean ok = ProdutoListaPresenteController.INSTANCE.delete(productGiftListId);
+        if (ok) {
+            System.out.println("Produto removido com sucesso.");
+            this.back();
+        } else {
+            System.out.println("Falha ao remover o produto.");
+        }
+    }
+
+    private void changeQuantity() {
+        System.out.println("Digite a nova quantidade: ");
+        String newQ = scanner.nextLine().trim().toUpperCase();
+        if (IsNumber.validate(newQ)) {
+            int nq = Integer.parseInt(newQ);
+            if (nq < 0)
+                System.out.println("Tentar novamente com um valor válido");
+            productGiftList.setQuantidade(nq);
+            ProdutoListaPresenteController.INSTANCE.update(productGiftList);
+        } else {
+            System.out.println("Tentar novamente com um valor válido");
+        }
+    }
+}
