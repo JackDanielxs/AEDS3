@@ -11,17 +11,13 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
 
 ## O sistema
 
-![](./assets/.png)
+![MenuProdutos](./assets/MenuProdutos.png)
 
-![](./assets/.png)
+![DetalhesProduto](./assets/DetalhesProduto.png)
 
-![](./assets/.png)
+![ListagemProdutos](./assets/ListagemProdutos.png)
 
-![](./assets/.png)
-
-![](./assets/.png)
-
-![](./assets/.png)
+![DetalhesProdutoLista](./assets/DetalhesProdutoLista.png)
 
 ## Classes
 - `Usuario`, `ListaPresente` e `Produto` (Classes modelo) - Todas extendem a classe `Registro`, usada como base das entidades.
