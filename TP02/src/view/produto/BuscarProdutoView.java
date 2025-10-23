@@ -8,7 +8,7 @@ public final class BuscarProdutoView extends View {
     public static final BuscarProdutoView INSTANCE = new BuscarProdutoView();
 
     private BuscarProdutoView() {
-        super("Buscar produto", false);
+        super("Buscar produto", true);
     }
 
     @Override

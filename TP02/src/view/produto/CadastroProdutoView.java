@@ -7,12 +7,11 @@ public final class CadastroProdutoView extends View {
     public static final CadastroProdutoView INSTANCE = new CadastroProdutoView();
 
     private CadastroProdutoView() {
-        super("Cadastrar Produto", false);
+        super("Cadastrar Produto", true);
     }
 
     @Override
     protected void viewDisplay() {
-        System.out.println("--- Cadastrar Produto ---");
 
         System.out.print("Nome: ");
         String name = scanner.nextLine().trim();
