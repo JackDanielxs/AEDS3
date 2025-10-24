@@ -43,8 +43,7 @@ public final class DetalhesProdutoLista extends View {
                     Quantidade: %d
 
                     (1) Alterar a quantidade
-                    (2) Alterar as observações
-                    (3) Remover o produto desta lista
+                    (2) Remover esse produto da lista
 
                     (R) Retornar ao menu anterior
 
@@ -62,9 +61,6 @@ public final class DetalhesProdutoLista extends View {
                     changeQuantity();
                     break;
                 case "2":
-                    editObservation();
-                    break;
-                case "3":
                     remove();
                     break;
                 case "R":
@@ -80,21 +76,12 @@ public final class DetalhesProdutoLista extends View {
         } while (!option.equals("R"));
     }
 
-    private void editObservation() {
-        System.out.println("Digite a nova obs: ");
-        String newOBS = scanner.nextLine().trim();
-        productGiftList.setDescricao(newOBS);
-        ProdutoListaPresenteController.INSTANCE.update(productGiftList);
-    }
-
     private void remove() {
         boolean ok = ProdutoListaPresenteController.INSTANCE.delete(productGiftListId);
         if (ok) {
             System.out.println("Produto removido.");
             this.back();
-        } else {
-            System.out.println("Erro ao remover o produto.");
-        }
+        } else { System.out.println("Erro ao remover o produto."); }
     }
 
     private void changeQuantity() {
@@ -103,11 +90,9 @@ public final class DetalhesProdutoLista extends View {
         if (IsNumber.validate(newQ)) {
             int nq = Integer.parseInt(newQ);
             if (nq < 0)
-                System.out.println("Tentar novamente com um valor válido");
+                System.out.println("Insira um valor válido");
             productGiftList.setQuantidade(nq);
             ProdutoListaPresenteController.INSTANCE.update(productGiftList);
-        } else {
-            System.out.println("Tentar novamente com um valor válido");
-        }
+        } else { System.out.println("Insira um valor válido"); }
     }
 }
