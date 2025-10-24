@@ -16,7 +16,7 @@ public final class ListarProdutosView extends View {
     private int page = 0;
 
     private ListarProdutosView() {
-        super("Listagem", true);
+        super("Listagem", false);
         set();
     }
 

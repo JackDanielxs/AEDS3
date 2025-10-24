@@ -37,11 +37,10 @@ public final class DetalhesProdutoLista extends View {
             this.reload();
 
             System.out.printf("""
-                    NOME: %s
-                    GTIN-13: %s
-                    DESCRIÇÃO: %s
-                    QUANTIDADE: %d
-                    OBSERVAÇÕES: %s
+                    Nome: %s
+                    Código GTIN-13: %s
+                    Descrição: %s
+                    Quantidade: %d
 
                     (1) Alterar a quantidade
                     (2) Alterar as observações
@@ -50,11 +49,10 @@ public final class DetalhesProdutoLista extends View {
                     (R) Retornar ao menu anterior
 
                     Opção: """,
-                    product.getGtin(),
                     product.getNome(),
+                    product.getGtin(),
                     product.getDescricao(),
-                    productGiftList.getQuantidade(),
-                    productGiftList.getDescricao()
+                    productGiftList.getQuantidade()
             );
 
             option = scanner.nextLine().trim().toUpperCase();
@@ -73,7 +71,7 @@ public final class DetalhesProdutoLista extends View {
                     this.back();
                     break;
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    System.out.println("Opção inválida.");
                     break;
             }
 
@@ -92,10 +90,10 @@ public final class DetalhesProdutoLista extends View {
     private void remove() {
         boolean ok = ProdutoListaPresenteController.INSTANCE.delete(productGiftListId);
         if (ok) {
-            System.out.println("Produto removido com sucesso.");
+            System.out.println("Produto removido.");
             this.back();
         } else {
-            System.out.println("Falha ao remover o produto.");
+            System.out.println("Erro ao remover o produto.");
         }
     }
 

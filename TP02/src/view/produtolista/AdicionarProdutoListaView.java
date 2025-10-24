@@ -18,7 +18,7 @@ public final class AdicionarProdutoListaView extends View {
     private int giftListId = -1;
 
     private AdicionarProdutoListaView() {
-        super("Listagem", true);
+        super("Listagem", false);
         OFFSET = 0;
         list = ProdutoController.INSTANCE.getAll();
         MAX = 10;
