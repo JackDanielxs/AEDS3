@@ -13,13 +13,13 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
 
 ## O sistema
 
-![Menu de Produtos](./assets/.png)
+![](./assets/.png)
 
-![Detalhes do Produto](./assets/.png)
+![](./assets/.png)
 
-![Listagem de Produtos](./assets/.png)
+![](./assets/.png)
 
-![Detalhes Produto Lista](./assets/.png)
+![](./assets/.png)
 
 ## Classes
 - `Usuario`, `ListaPresente` e `Produto` (Classes modelo) - Todas extendem a classe `Registro`, usada como base das entidades.
@@ -30,9 +30,9 @@ Para compartilhar, o sistema gera um código NanoID, que permite que outras pess
 ---
 
 - O índice invertido com os termos dos nomes dos produts foi criado usando a classe ListaInvertida?
-**R: Sim. A implementação do índice invertido foi feita utilizando a classe ListaInvertida, garantindo uma estrutura eficiente para associar termos aos produtos correspondentes.**
+**R: Sim. A implementação do índice invertido foi feita utilizando a classe ListaInvertida, garantindo eficiência ao associar termos aos produtos correspondentes.**
 - É possível buscar produtos por palavras no menu de manutenção de produtos?
-**R: Sim. O sistema permite realizar buscas por produtos tanto pelo nome quanto pelo GTIN diretamente no menu de manutenção.**
+**R: Sim. O sistema permite buscar produtos tanto pelo nome quanto pelo GTIN diretamente no menu de manutenção.**
 - É possível buscar produtos por palavras na hora de acrescentá-los às listas dos usuários?
 **R: Sim. Também é possível buscar produtos por nome ou GTIN ao adicioná-los às listas dos usuários.**
 - O trabalho compila corretamente?
