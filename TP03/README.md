@@ -11,16 +11,6 @@ Também é possível cadastrar produtos nas listas, permitindo adicionar descri�
 
 Para compartilhar, o sistema gera um código NanoID, que permite que outras pessoas visualizem as listas sem expor informações sensíveis, garantindo praticidade e segurança.
 
-## O sistema
-
-![](./assets/.png)
-
-![](./assets/.png)
-
-![](./assets/.png)
-
-![](./assets/.png)
-
 ## Classes
 - `Usuario`, `ListaPresente` e `Produto` (Classes modelo) - Todas extendem a classe `Registro`, usada como base das entidades.
 - `ArvoreBMais` - Implementa o relacionamento **1:N** entre usuários e listas.
